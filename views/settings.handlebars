@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="/css/profile.css" />
+<link rel="stylesheet" href="/css/settings.css">
+{{> profile-nav}}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3" id="sidebar" >
+       
+         {{> side-nav}}
+        </div>
+        <div class="col-lg-9 profile-container" id="content">
+            <div>
+                <h1>Profile</h1>
+                <div>
+                    <img id="profile-pic" src="/images/profile.png" alt="">
+                    {{!-- <img src="{{user.photo}}" alt="profile picture" /> --}}
+                    {{!-- <h2>{{user.username}}</h2> --}}
+                    {{!-- <p>{{user.email}}</p> --}}
+                </div>
+            </div>
+            <h1>Settings</h1>
+            <div>
+                <p>
+                    Change the theme of the app
+                </p>
+                <form action="/settings" method="POST">
+                    <select name="theme">
+                        <option value="default">Default</option>
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                    <button type="submit">Change</button>
+                </form>
+
+            </div>
+            <div>
+                <p>
+                    Change the language of the app
+                </p>
+                <form action="/settings" method="POST">
+                    <select name="language">
+                        <option value="en">English</option>
+                        <option value="fr">French</option>
+                        <option value="es">Spanish</option>
+                    </select>
+                    <button type="submit">Change</button>
+                </form>
+            </div>
+            <div>
+                <p>
+                    update your username
+                </p>
+                <form action="/settings" method="POST">
+                    <input type="text" name="username" placeholder="username">
+                    <button type="submit">Change</button>
+                </form>
+                <p>
+                    update your password
+                </p>
+                <form action="/settings" method="POST">
+                    <input type="password" name="password" placeholder="password">
+                    <button type="submit">Change</button>
+                <form>
+
+            </div>
+            <div>
+                <p>
+                    update your profile picture
+                </p>
+                <form enctype="multipart/form-data" action="/settings" method="POST">
+                    <input type="file" name="photo" id="photo" accept="images/*" />
+                    <button type="submit">Change</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/profile.js"></script>
+<script src="/js/settings.js"></script>
+```

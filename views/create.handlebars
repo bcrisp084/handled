@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/profile.css" />
+{{> profile-nav}}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3" id="sidebar" >
+       
+         {{> side-nav}}
+        </div>
+        <div class="col-lg-9" id="content">
+<div class="create-container">
+    <form>
+        <label for="title">Add a Task</label>
+        <input type="text" id="text" name="text" placeholder="text">
+        <label for="done">Check if complete</label>
+        <input type="checkbox" id="done" name="isDone" value="true">
+        <label for="important">How important is this?</label>
+        <select id="importance" name="isImportant">
+        <option value="1">true</option>
+        <option value="2">false</option>
+        </select>
+        <label for="dueDate">Date to complete</label>
+        <input type="date" id="dueDate" name="due_date" placeholder="dueDate">
+        <input type="submit" value="Submit" id="create-submit">
+    </form>
+</div>
+     </div>
+    </div>
+</div>
+   {{!-- <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+   <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+      integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> --}}
+<script src="/js/profile.js"></script>
