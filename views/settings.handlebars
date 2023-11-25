@@ -1,3 +1,10 @@
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
 <link rel="stylesheet" href="/css/profile.css" />
 <link rel="stylesheet" href="/css/settings.css">
 {{> profile-nav}}
@@ -9,23 +16,20 @@
          {{> side-nav}}
         </div>
         <div class="col-lg-9 profile-container" id="content">
-            <div>
-                <h1>Profile</h1>
-                <div>
-                    <img id="profile-pic" src="/images/profile.png" alt="">
-                    {{!-- <img src="{{user.photo}}" alt="profile picture" /> --}}
-                    {{!-- <h2>{{user.username}}</h2> --}}
-                    {{!-- <p>{{user.email}}</p> --}}
+            <div class="row" id="settings-content">
+                <div class="col-lg-5" id="settings-pic">
+                    <img id="profile-pic" src="/images/{{imageData.name}}" alt="profile-picture">
+                    <h2>{{imageData.user.username}}</h2> 
                 </div>
-            </div>
-            <h1>Settings</h1>
+                <div class="col-lg-7">
+                     <h1>Settings</h1>
               <div>
                 <p>
                     update your profile picture
                 </p>
-                <form enctype="multipart/form-data" action="/settings" method="POST">
+                <form enctype="multipart/form-data" action="/api/settings" method="POST">
                     <input type="file" name="photo" id="photo" accept="images/*" />
-                    <button type="submit">Change</button>
+                    <button id="pic-upload" type="submit">Change</button>
                 </form>
             </div>
             <div>
@@ -70,6 +74,14 @@
                     <input type="password" name="password" placeholder="password">
                     <button type="submit">Change</button>
                 <form>
+                    </div>
+                
+            </div>
+            <div>
+                <div>
+                </div>
+            </div>
+           
 
             </div>
           

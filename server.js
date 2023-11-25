@@ -9,6 +9,8 @@ const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const hbs = exphbs.create({});
 
+global.__basedir = __dirname;
+
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { user, todo, note } = require("../models");
+const { user, todo, note, images } = require("../models");
 const isAuth = require("../config/isAuth");
 
 router.get("/", (req, res) => {
@@ -23,6 +23,7 @@ router.get("/profile", isAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
+
     const todoData = todos.map((todo) => todo.get({ plain: true }));
     res.render("profile", {
       todoData,
@@ -46,6 +47,7 @@ router.get("/notes", isAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
+      order: [["id", "DESC"]],
     });
     const noteData = notes.map((note) => note.get({ plain: true }));
     res.render("notes", {
@@ -65,7 +67,24 @@ router.get("/quotes", isAuth, async (req, res) => {
 });
 router.get("/settings", isAuth, async (req, res) => {
   try {
-    res.render("settings");
+    const image = await images.findOne({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [
+        {
+          model: user,
+          attributes: ["username"],
+        },
+      ],
+    });
+
+    const imageData = image.get({ plain: true });
+    console.log("imageData", imageData);
+    res.render("settings", {
+      imageData,
+      logged_in: req.session.logged_in,
+    });
   } catch (error) {
     res.status(500).json(error);
   }
