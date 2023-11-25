@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/profile.css" />
+<link rel="stylesheet" href="/css/quotes.css" />
 {{> profile-nav}}
 
 <div class="container-fluid">
@@ -8,12 +9,21 @@
          {{> side-nav}}
         </div>
         <div class="col-lg-9" id="content">
-            <div>
-                <button id="daily-quote">Quote of the day</button>
+            <div id="quote-info">
+                <p id="daily-quote">Quote of the day</p>
                 <div id="quote"></div>
                 <div id="author"></div>
+            </div>
+            <div id="quote-info">
+                <button id="random-quote-btn">Get a random quote</button>
+                <div id="random-category"></div>
+                <div id="random-quote"></div>
+                <div id="random-author"></div>
             </div>
         </div>
     </div>
 </div>
+  {{> footer}}
+
 <script src="/js/profile.js"></script>
+<script src="/js/quotes.js"></script>

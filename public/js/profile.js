@@ -44,10 +44,25 @@ $(document).ready(function () {
         console.log(data);
         $("#quote").text(data.text);
         $("#author").text(data.author);
+        $("#category").text(data.category);
+      });
+  }
+  getQuote();
+
+  function getRandomQuote() {
+    fetch(
+      `https://famous-quotes4.p.rapidapi.com/random?category=all&count=2&rapidapi-key=${apiKey}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        $("#random-quote").text(data[0].text);
+        $("#random-author").text(data[0].author);
+        $("#random-category").text(data[0].category);
       });
   }
 
-  $("#daily-quote").on("click", getQuote);
+  $("#random-quote-btn").on("click", getRandomQuote);
 
   function submitTask(event) {
     event.preventDefault();
