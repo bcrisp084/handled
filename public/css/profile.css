@@ -171,12 +171,47 @@
 }
 
 #content {
-  background-color: #f0f0f0;
-  box-shadow: inset 0 0 10px 5px #e5e5e5;
-  /* height: 100vh; */
+  background-color: #b2bec3;
+  box-shadow: inset 0 0 5px 5px #e5e5e5;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 1rem;
+}
+
+#todos {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+
+  width: 100%;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  background-color: #e7e7e7;
+  box-shadow: inset 0 0 10px 5px #9f9f9f;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.todo-item {
+  align-items: center;
+  margin-top: 3rem;
+  background-color: #e7e7e7;
+  box-shadow: inset 0 0 10px 5px #9f9f9f;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+  list-style-type: none;
 }
 
 .datetime {
@@ -185,6 +220,30 @@
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
+}
+.content-note {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.note-input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: inset 0 0 10px 5px #e7e3e3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .tab-list {
@@ -254,7 +313,7 @@
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
-  width: 75%;
+  width: 100%;
 }
 
 .create-container form {

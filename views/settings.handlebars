@@ -3,7 +3,7 @@
 {{> profile-nav}}
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row grid-container">
         <div class="col-lg-3" id="sidebar" >
        
          {{> side-nav}}
@@ -19,6 +19,15 @@
                 </div>
             </div>
             <h1>Settings</h1>
+              <div>
+                <p>
+                    update your profile picture
+                </p>
+                <form enctype="multipart/form-data" action="/settings" method="POST">
+                    <input type="file" name="photo" id="photo" accept="images/*" />
+                    <button type="submit">Change</button>
+                </form>
+            </div>
             <div>
                 <p>
                     Change the theme of the app
@@ -63,15 +72,7 @@
                 <form>
 
             </div>
-            <div>
-                <p>
-                    update your profile picture
-                </p>
-                <form enctype="multipart/form-data" action="/settings" method="POST">
-                    <input type="file" name="photo" id="photo" accept="images/*" />
-                    <button type="submit">Change</button>
-                </form>
-            </div>
+          
         </div>
     </div>
 </div>

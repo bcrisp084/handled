@@ -20,7 +20,7 @@ router.get("/profile", isAuth, async (req, res) => {
   try {
     const todos = await todo.findAll({
       where: {
-        user_id: 1,
+        user_id: req.session.user_id,
       },
     });
     const todoData = todos.map((todo) => todo.get({ plain: true }));
