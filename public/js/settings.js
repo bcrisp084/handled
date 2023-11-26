@@ -11,7 +11,7 @@ function changeSettings(event) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
-        location.reload();
+        document.location.replace("/settings");
       });
     } else {
       console.log("Response failed");

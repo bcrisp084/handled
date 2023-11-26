@@ -23,11 +23,25 @@ router.get("/profile", isAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
+    const image = await images.findOne({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [
+        {
+          model: user,
+          attributes: ["username"],
+        },
+      ],
+    });
+
+    const imageData = image.get({ plain: true });
 
     const todoData = todos.map((todo) => todo.get({ plain: true }));
     res.render("profile", {
       todoData,
       logged_in: req.session.logged_in,
+      imageData,
     });
   } catch (error) {
     res.status(500).json(error);
@@ -36,7 +50,23 @@ router.get("/profile", isAuth, async (req, res) => {
 
 router.get("/create", isAuth, async (req, res) => {
   try {
-    res.render("create");
+    const image = await images.findOne({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [
+        {
+          model: user,
+          attributes: ["username"],
+        },
+      ],
+    });
+
+    const imageData = image.get({ plain: true });
+    res.render("create", {
+      logged_in: req.session.logged_in,
+      imageData,
+    });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -49,10 +79,24 @@ router.get("/notes", isAuth, async (req, res) => {
       },
       order: [["id", "DESC"]],
     });
+    const image = await images.findOne({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [
+        {
+          model: user,
+          attributes: ["username"],
+        },
+      ],
+    });
+
+    const imageData = image.get({ plain: true });
     const noteData = notes.map((note) => note.get({ plain: true }));
     res.render("notes", {
       noteData,
       logged_in: req.session.logged_in,
+      imageData,
     });
   } catch (error) {
     res.status(500).json(error);
@@ -60,7 +104,23 @@ router.get("/notes", isAuth, async (req, res) => {
 });
 router.get("/quotes", isAuth, async (req, res) => {
   try {
-    res.render("quotes");
+    const image = await images.findOne({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [
+        {
+          model: user,
+          attributes: ["username"],
+        },
+      ],
+    });
+
+    const imageData = image.get({ plain: true });
+    res.render("quotes", {
+      logged_in: req.session.logged_in,
+      imageData,
+    });
   } catch (error) {
     res.status(500).json(error);
   }
