@@ -1,4 +1,5 @@
 .datepicker {
+  color: white;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -165,13 +166,13 @@
 
 #sidebar {
   border-right: solid 1px #ddd;
-  background-color: #f0f0f0;
-  box-shadow: inset 0 0 10px 5px #b9b9b9;
+  background-color: #343a40;
+  box-shadow: inset 0 0 3px 3px #b9b9b9;
   height: 100vh;
 }
 
 #content {
-  background-color: #b2bec3;
+  background-color: #343a40;
   color: white;
   /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
   box-shadow: inset 0 0 5px 5px #e5e5e5;
@@ -196,8 +197,8 @@
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
-  background-color: #e7e7e7;
-  box-shadow: inset 0 0 10px 5px #9f9f9f;
+  background-color: #dee2e6;
+  box-shadow: inset 0 0 10px 5px #ffffff;
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
@@ -207,16 +208,18 @@
 .todo-item {
   align-items: center;
   margin-top: 3rem;
-  background-color: #e7e7e7;
+  background-color: #dee2e6;
   box-shadow: inset 0 0 10px 5px #9f9f9f;
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
   width: 100%;
   list-style-type: none;
+  color: black;
 }
 
 .datetime {
+  color: white;
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.2rem;
@@ -272,21 +275,23 @@
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: #262525;
+  color: #212121;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  background: #f0f0f0;
-  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+  background: #ced4da;
+  box-shadow: 5px 5px 5px #d9d9d9;
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
+  border: 4px solid rgba(59, 59, 59, 0.707);
 }
 
 .tab-list ul li a:hover {
-  background-color: #e3e3e3;
+  color: black;
+  background-color: #adb5bd;
   border-radius: 5px;
-  box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff; /* Adjust shadows on hover for interactive effect */
+  box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #adb5bd; /* Adjust shadows on hover for interactive effect */
 }
 
 .logout {
@@ -310,7 +315,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
-  background-color: #e7e7e7;
+  background-color: #dee2e6;
   box-shadow: inset 0 0 10px 5px #9f9f9f;
   border-radius: 10px;
   padding: 10px 20px;

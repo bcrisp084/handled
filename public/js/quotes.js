@@ -12,7 +12,7 @@ function getQuote() {
       $("#category").text(data.category);
     });
 }
-// getQuote();
+getQuote();
 
 function getRandomQuote() {
   fetch(
@@ -27,4 +27,4 @@ function getRandomQuote() {
     });
 }
 
-// $("#random-quote-btn").on("click", getRandomQuote);
+$("#random-quote-btn").on("click", getRandomQuote);
